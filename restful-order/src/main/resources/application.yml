@@ -1,0 +1,15 @@
+spring:
+  profiles:
+    include: common
+
+# mybatis plus 配置
+mybatis-plus:
+  mapper-locations: classpath*:mappers/*.xml
+
+# 在控制台输出 SQL 语句
+logging:
+  level:
+    com.ouyangwei.multimodule.dao.mappers: debug
+
+server:
+  port: 8081
