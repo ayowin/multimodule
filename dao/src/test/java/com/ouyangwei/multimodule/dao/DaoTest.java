@@ -1,14 +1,15 @@
 package com.ouyangwei.multimodule.dao;
 
 import com.alibaba.druid.pool.DruidDataSource;
+import com.alibaba.fastjson.JSONObject;
 import com.ouyangwei.multimodule.dao.entities.Order;
 import com.ouyangwei.multimodule.dao.entities.User;
 import com.ouyangwei.multimodule.dao.mappers.OrderMapper;
 import com.ouyangwei.multimodule.dao.mappers.UserMapper;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.TestTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -20,6 +21,9 @@ public class DaoTest {
 
     @Autowired
     DataSource dataSource;
+
+    @Autowired
+    RedisTemplate redisTemplate;
 
     @Autowired
     UserMapper userMapper;
@@ -44,6 +48,14 @@ public class DaoTest {
         //关闭连接
         connection.close();
         System.out.println("========Test: testDruidDataSource() end===========");
+    }
+
+    @Test
+    public void redisTest(){
+        System.out.println("========Test: redisTest() begin===========");
+        User user = userMapper.getOuyangwei();
+        redisTemplate.opsForValue().set("ouyangwei", JSONObject.toJSON(user).toString());
+        System.out.println("========Test: redisTest() end===========");
     }
 
     @Test

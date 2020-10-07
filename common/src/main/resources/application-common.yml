@@ -1,6 +1,7 @@
 # spring相关配置
 spring:
   profiles: common
+
   # 数据库配置：url、账号、密码、连接池（druid）等
   datasource:
     username: root
@@ -27,3 +28,15 @@ spring:
     useGlobalDataSourceStat: true
     # 打开mergeSql功能；慢SQL记录
     #connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+
+  # redis配置：IP地址、端口号、密码、连接池等
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    lettuce:
+      pool:
+        max-active: 8
+        max-wait: -1
+        max-idle: 8
+        min-idle: 0
