@@ -10,6 +10,8 @@ mybatis-plus:
 logging:
   level:
     com.ouyangwei.multimodule.dao.mappers: debug
+  file:
+    path: ./logs/restful-order
 
 server:
   port: 8081
