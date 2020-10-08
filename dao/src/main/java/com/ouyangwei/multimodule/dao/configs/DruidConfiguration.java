@@ -1,4 +1,4 @@
-package com.ouyangwei.multimodule.dao.config;
+package com.ouyangwei.multimodule.dao.configs;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.support.http.StatViewServlet;

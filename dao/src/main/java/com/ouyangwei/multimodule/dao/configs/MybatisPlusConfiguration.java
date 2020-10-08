@@ -1,4 +1,4 @@
-package com.ouyangwei.multimodule.dao.config;
+package com.ouyangwei.multimodule.dao.configs;
 
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
 import com.baomidou.mybatisplus.extension.plugins.pagination.optimize.JsqlParserCountOptimize;

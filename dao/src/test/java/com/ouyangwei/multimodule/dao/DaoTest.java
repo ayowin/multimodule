@@ -6,10 +6,12 @@ import com.ouyangwei.multimodule.dao.entities.Order;
 import com.ouyangwei.multimodule.dao.entities.User;
 import com.ouyangwei.multimodule.dao.mappers.OrderMapper;
 import com.ouyangwei.multimodule.dao.mappers.UserMapper;
+import com.ouyangwei.multimodule.dao.utils.RedisUtil;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -24,6 +26,9 @@ public class DaoTest {
 
     @Autowired
     RedisTemplate redisTemplate;
+
+    @Autowired
+    RedisUtil redisUtil;
 
     @Autowired
     UserMapper userMapper;
@@ -54,8 +59,34 @@ public class DaoTest {
     public void redisTest(){
         System.out.println("========Test: redisTest() begin===========");
         User user = userMapper.getOuyangwei();
-        redisTemplate.opsForValue().set("ouyangwei", JSONObject.toJSON(user).toString());
+
+        ValueOperations valueOperations = redisTemplate.opsForValue();
+        /* 写 */
+        /**
+         * 方式一：
+         * String序列化器
+         **/
+        valueOperations.set("ouyangwei", JSONObject.toJSON(user).toString());
+        /**
+         * 方式二：
+         * Jackson2Json序列化器
+         **/
+//        redisTemplate.opsForValue().set("ouyangwei", user);
+
+        /* 读 */
+        Object object = valueOperations.get("ouyangwei");
+        System.out.println(object);
         System.out.println("========Test: redisTest() end===========");
+    }
+
+    @Test
+    public void redisUtilTest(){
+        System.out.println("========Test: redisUtilTest() begin===========");
+        User user = userMapper.getOuyangwei();
+        redisUtil.set("ouyangwei",JSONObject.toJSON(user).toString());
+        Object object = redisUtil.get("ouyangwei");
+        System.out.println(object);
+        System.out.println("========Test: redisUtilTest() end===========");
     }
 
     @Test

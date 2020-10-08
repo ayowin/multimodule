@@ -3,6 +3,7 @@ package com.ouyangwei.multimodule.restful.login.services.impls;
 import com.alibaba.fastjson.JSONObject;
 import com.ouyangwei.multimodule.dao.entities.User;
 import com.ouyangwei.multimodule.dao.mappers.UserMapper;
+import com.ouyangwei.multimodule.dao.utils.RedisUtil;
 import com.ouyangwei.multimodule.restful.login.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -15,18 +16,17 @@ public class UserServiceImpl implements UserService {
     UserMapper userMapper;
 
     @Autowired
-    RedisTemplate redisTemplate;
+    RedisUtil redisUtil;
 
     @Override
     public User getOuyangwei() {
         User user = null;
-        ValueOperations valueOperations = redisTemplate.opsForValue();
-        String userString = (String) valueOperations.get("ouyangwei");
+        String userString = (String) redisUtil.get("ouyangwei");
         if(userString != null){
             user = JSONObject.parseObject(userString,User.class);
         } else {
             user = userMapper.getOuyangwei();
-            valueOperations.set("ouyangwei",JSONObject.toJSON(user).toString());
+            redisUtil.set("ouyangwei",JSONObject.toJSON(user).toString());
         }
         return user;
     }
