@@ -1,7 +1,7 @@
 
 # multimodule
 **传统的java项目都是“一个大工程”的形式开展的，随着技术的发展，各模块越来越分离，再以一个大工程来开展项目显得越来越力不从心，又不利于团队合作。multimodule是小编搭建出来的多模块demo。首先是将前（front）后端分离，其次是将传统大工程拆分位common（公用模块）、dao(数据库访问模块)、业务模块（本demo中的restful-login和restful-order）。**
-* 2020.10.08 已完成该代码框架的第一版：front模块（前端）、common模块、dao模块、restful-login模块、restful-order模块。
+* 2020.10.08 已完成该代码框架的第1版：front模块（前端）、common模块、dao模块、restful-login模块、restful-order模块。
 
 ## front
 
