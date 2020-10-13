@@ -1,0 +1,12 @@
+2020-10-13 21:33:07.984  INFO 4212 --- [main] c.o.m.restful.login.RestfulLoginTest     : Starting RestfulLoginTest on WEIZAI with PID 4212 (started by OuyangWei in D:\project\Java\JavaWeb\idea_projects\multimodule\restful-login)
+2020-10-13 21:33:07.986  INFO 4212 --- [main] c.o.m.restful.login.RestfulLoginTest     : The following profiles are active: common
+2020-10-13 21:33:08.623  INFO 4212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-13 21:33:08.625  INFO 4212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-13 21:33:08.657  INFO 4212 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 18ms. Found 0 Redis repository interfaces.
+2020-10-13 21:33:11.329  INFO 4212 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-13 21:33:11.711  INFO 4212 --- [main] c.o.m.restful.login.RestfulLoginTest     : Started RestfulLoginTest in 4.154 seconds (JVM running for 5.648)
+2020-10-13 21:33:11.917  INFO 4212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-13 21:33:12.136  INFO 4212 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-13 21:33:12.155  INFO 4212 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-13 21:33:12.178  INFO 4212 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-13 21:33:12.180  INFO 4212 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

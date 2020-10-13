@@ -45,18 +45,11 @@
             </exclusions>
         </dependency>
 
-        <!-- 使用mysql，导入mysql驱动包，兼容到5.1.1版本 -->
+        <!-- 使用mysql，导入mysql驱动包，兼容到5.1.47版本 -->
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.1</version>
-        </dependency>
-
-        <!-- druid包 -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>druid</artifactId>
-            <version>1.1.13</version>
+            <version>5.1.47</version>
         </dependency>
 
         <!-- fastjson包，json使用fastjson -->

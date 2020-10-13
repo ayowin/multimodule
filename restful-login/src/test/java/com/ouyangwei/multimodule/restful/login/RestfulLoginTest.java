@@ -1,8 +1,8 @@
 package com.ouyangwei.multimodule.restful.login;
 
-import com.alibaba.druid.pool.DruidDataSource;
 import com.ouyangwei.multimodule.dao.entities.User;
 import com.ouyangwei.multimodule.dao.mappers.UserMapper;
+import com.zaxxer.hikari.HikariDataSource;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -21,22 +21,24 @@ public class RestfulLoginTest {
     UserMapper userMapper;
 
     @Test
-    public void testDruidDataSource() throws SQLException {
-        System.out.println("========Test: testDruidDataSource() begin===========");
+    public void testDataSource() throws SQLException {
+        System.out.println("========Test: testDataSource() begin===========");
 
         System.out.println("datasource: " + dataSource.getClass().getName());
-        DruidDataSource druidDataSource = (DruidDataSource) dataSource;
-        System.out.println("druidDataSource initialSize: " + druidDataSource.getInitialSize());
-        System.out.println("druidDataSource maxActive: " + druidDataSource.getMaxActive());
-        System.out.println("druidDataSource filters: " + druidDataSource.getFilterClassNames());
-        System.out.println("druidDataSource useGlobalDataSourceStat: " + druidDataSource.isUseGlobalDataSourceStat());
+        HikariDataSource hikariDataSource = (HikariDataSource) dataSource;
+        System.out.println("hikariDataSource MinimumIdle: " + hikariDataSource.getMinimumIdle());
+        System.out.println("hikariDataSource MaximumPoolSize: " + hikariDataSource.getMaximumPoolSize());
+        System.out.println("hikariDataSource IdleTimeout: " + hikariDataSource.getIdleTimeout());
+        System.out.println("hikariDataSource MaxLifetime: " + hikariDataSource.getMaxLifetime());
+        System.out.println("hikariDataSource ConnectionTimeout: " + hikariDataSource.getConnectionTimeout());
+        System.out.println("hikariDataSource ConnectionTestQuery: " + hikariDataSource.getConnectionTestQuery());
 
         //获得连接
         Connection connection = dataSource.getConnection();
         System.out.println("connection: " + connection);
         //关闭连接
         connection.close();
-        System.out.println("========Test: testDruidDataSource() end===========");
+        System.out.println("========Test: testDataSource() end===========");
     }
 
     @Test

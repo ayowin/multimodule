@@ -1,0 +1,12 @@
+2020-10-13 21:33:31.396  INFO 16572 --- [main] c.o.m.restful.order.RestfulOrderTest     : Starting RestfulOrderTest on WEIZAI with PID 16572 (started by OuyangWei in D:\project\Java\JavaWeb\idea_projects\multimodule\restful-order)
+2020-10-13 21:33:31.397  INFO 16572 --- [main] c.o.m.restful.order.RestfulOrderTest     : The following profiles are active: common
+2020-10-13 21:33:32.037  INFO 16572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode!
+2020-10-13 21:33:32.039  INFO 16572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2020-10-13 21:33:32.071  INFO 16572 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19ms. Found 0 Redis repository interfaces.
+2020-10-13 21:33:34.776  INFO 16572 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2020-10-13 21:33:35.236  INFO 16572 --- [main] c.o.m.restful.order.RestfulOrderTest     : Started RestfulOrderTest in 4.254 seconds (JVM running for 5.655)
+2020-10-13 21:33:35.450  INFO 16572 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2020-10-13 21:33:35.706  INFO 16572 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2020-10-13 21:33:35.728  INFO 16572 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2020-10-13 21:33:35.757  INFO 16572 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2020-10-13 21:33:35.760  INFO 16572 --- [SpringContextShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
